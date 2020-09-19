@@ -1,65 +1,49 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Navbar from '../components/NavBar'
+import HomePost from '../components/HomePost'
+import { Container, Row } from 'react-bootstrap'
+import { getAllPostsForHome } from '../lib/api'
 
-export default function Home() {
+export default function Index({ allPosts: { edges }, preview }) {
+
+  const morePosts = edges.slice(0)
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Blog Awanpc</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <Navbar />
+      <Container fluid="md" className="mt-3">
+        <div className="row m-0">
+          <div className="col-sm-8 bg-white rounded shadow">{morePosts.length > 0 && <HomePost posts={morePosts} />}</div>
+          <div className="col-sm-4"><div className="row p-2 bg-white rounded shadow sidebar">
+            <div className="container justify-content-center pt-3">
+              <div className="align-items-center">
+                <div className="image text-center">
+                  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=80" className="rounded" width="155" />
+                </div>
+                <div className="text-center">
+                  <h4 className="mb-0 mt-0">Awan Aprilino</h4>
+                  <span>Blogger Pemula</span>
+                </div>
+                <div className="button mt-2 d-flex flex-row align-items-center"> <button className="btn btn-sm btn-outline-primary w-100">Twitter</button> <button className="btn btn-sm btn-primary w-100 ml-2">Facebook</button> </div>
+              </div>
+            </div>
+          </div>
+          </div>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </Container>
+    </>
   )
+}
+
+export async function getStaticProps({ preview = false }) {
+  const allPosts = await getAllPostsForHome(preview)
+  return {
+    props: { allPosts, preview },
+  }
 }
