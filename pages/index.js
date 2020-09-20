@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import Navbar from '../components/NavBar'
 import HomePost from '../components/HomePost'
-import { Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { getAllPostsForHome } from '../lib/api'
 
 export default function Index({ allPosts: { edges }, preview }) {
