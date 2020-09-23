@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 html,
 body {
   padding: 0;
   margin: 0;
-  background: #f8f9fa;
-  color: #212529;
+  background: #edf2f7;
+  line-height: 1.5;
 }
 
 a {
@@ -12,141 +14,69 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #212529;
 }
-
-p {
-  color:#343a40;
-}
-
-h1, h2, h3, h4 {color: #56585b;}
-
-a h1:hover, a h2:hover, a h3:hover, a h4:hover {
-  color:#212529;
-  }
   
-
-
 
 * {
   box-sizing: border-box;
 }
 
-.article-clean {
-  color:#333;
-  background-color:#fff;
-  font-size:18px;
+.post-body p {
+  padding-top: 1rem;
+  color: #1a202c;
+}
+.post-body h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+.post-body h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+.post-body h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+.post-body figure {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.article-clean .intro {
-  font-size:16px;
-  margin:0 auto 30px;
+.post-body img {
+  margin: auto;
 }
 
-.article-clean .intro h1 {
-  font-size:32px;
-  margin-bottom:15px;
-  padding-top:20px;
-  line-height:1.5;
-  color:inherit;
-  margin-top:20px;
+.post-body pre {
+  background-color: #292E34; /* warna background */
+  border-left: 5px solid #008c5f; /* variasi border kiri */
+  padding:0; margin:.5em auto; white-space:pre; word-wrap:break-word; overflow:auto; position:relative; width:100%; -moz-tab-size:2; -o-tab-size:2; tab-size:2; word-break:normal; user-select:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text; -webkit-hyphens:none; -moz-hyphens:none; -ms-hyphens:none; hyphens:none
 }
-
-.article-clean .intro p {
-  font-size:12px;
+.post-body pre code {
+  color: #BFBF90; /* warna huruf */
+  font-size: 12px; /* ukuran huruf */ 
+  max-height:250px; line-height:1.5em; display:block; background:none; border:none; padding:10px 15px; font-family:'source code pro',menlo,consolas,monaco,monospace; white-space:pre-wrap; overflow:auto; user-select:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text
 }
-
-.article-clean .intro p .by {
-  font-style:italic;
-  padding:4px 10px 4px 0;
-  margin-right:10px;
-  border-right:1px solid #ddd;
-}
-
-.article-clean .intro p .date {
-  text-transform:uppercase;
-
-}
-.article-clean .intro p .categories {
-  font-style:italic;
-  padding:4px 0 4px 10px;
-  margin-left:10px;
-  border-left:1px solid #ddd;
-}
-
-.article-clean .intro p a {
-  color:#333;
-  text-transform:uppercase;
-  padding-left:3px;
-}
-
-.article-clean .intro img {
-  margin-top:20px;
-}
-
-.article-clean .text p {
-  margin-bottom:20px;
-  line-height:28px;
-  font-size:18px;
-}
-
-@media (min-width:768px) {
-  .article-clean .text p {
-    font-size:21px;
-    line-height: 32px;;
-  }
-}
-
-.article-clean .text h2 {
-  margin-top:28px;
-  margin-bottom:20px;
-  line-height:1.45;
-  font-size:20px;
-  font-weight:bold;
-  color:#333;
-}
-
-@media (min-width:768px) {
-  .article-clean .text h2 {
-    font-size:25px;
-  }
-  .sidebar {
-    margin:0 !important;
-  }
-}
-
-.article-clean .text figure {
-  text-align:center;
-  margin-top:30px;
-  margin-bottom:20px;
-}
-
-.article-clean .text figure img {
-  margin-bottom:12px;
-  max-width:100% !important;
-  height: auto !important;
-}
-
 blockquote {
-  background:#f9f9f9;
-  border-left:10px solid #ccc;
-  margin:1.5em 10px;
-  padding:.5em 10px;
-  quotes:"\201C""\201D""\2018""\2019";
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before {
-  color:#ccc;
-  font-size:1rem;
-  line-height:1.5em;
-  margin-right:.25em;
-  vertical-align:-.4em;
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
 }
 blockquote p {
-  display:inline;
-}
-
-.sidebar{
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-top:15px;
+  display: inline;
 }
