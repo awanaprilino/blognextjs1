@@ -7,6 +7,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import Postbody from '../../components/Post'
 import MetaPost from '../../components/MetaPost'
+import Header from '../../components/Header'
+import Topnav from '../../components/TopNav'
 
 export async function getStaticProps({ params, preview = false, previewData }) {
     const data = await getPostAndMorePosts(params.slug, preview, previewData)
@@ -36,22 +38,23 @@ export default function Post({ post, posts, preview }) {
     }
     return (
         <>
+            <Topnav />
+            <Header />
             <NavBar />
-            <Container>
-                {router.isFallback ? (
-                    <div>Loading…</div>
-                ) : (
-                        <>
-                            <MetaPost metaTitle={post.title} metaImage={post.featuredImage?.node?.sourceUrl} />
-                            <Postbody title={post.title}
-                                featuredImage={post.featuredImage.node.sourceUrl}
-                                date={post.date}
-                                author={post.author.node.name}
-                                categories={post.categories}
-                                content={post.content} />
-                        </>
-                    )}
-            </Container>
+            {router.isFallback ? (
+                <div>Loading…</div>
+            ) : (
+                    <>
+                        <MetaPost metaTitle={post.title} metaImage={post.featuredImage?.node?.sourceUrl} />
+                        <Postbody title={post.title}
+                            featuredImage={post.featuredImage.node.sourceUrl}
+                            date={post.date}
+                            author={post.author.node.name}
+                            categories={post.categories}
+                            content={post.content} />
+                    </>
+
+                )}
             <Footer />
         </>
     )

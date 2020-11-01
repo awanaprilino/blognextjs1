@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Navbar from '../components/NavBar'
 import HomePost from '../components/HomePost'
-import { Container } from 'react-bootstrap'
 import { getAllPostsForHome } from '../lib/api'
+import SidebarRight from '../components/SidebarRight'
+import Topnav from '../components/TopNav'
+import Header from '../components/Header'
 
 export default function Index({ allPosts: { edges }, preview }) {
 
@@ -14,9 +16,12 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title>Blog Awanpc</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Topnav></Topnav>
+      <Header></Header>
       <Navbar />
-      <div className="w-full md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto py-10 mt-3 sm:mt-2 md:mt-4 px-4">
+      <div className="container mx-auto flex flex-wrap py-6">
         {morePosts.length > 0 && <HomePost posts={morePosts} />}
+        <SidebarRight></SidebarRight>
       </div>
     </>
   )

@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: #edf2f7;
+  background: #fff;
   line-height: 1.5;
 }
 
@@ -16,67 +16,148 @@ a:hover {
   text-decoration: none;
 }
   
-
 * {
   box-sizing: border-box;
 }
-
-.post-body p {
-  padding-top: 1rem;
-  color: #1a202c;
-}
-.post-body h1 {
-  font-size: 1.7rem;
-  font-weight: bold;
-  padding: 20px 0;
-}
-.post-body h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 20px 0;
-}
-.post-body h3 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 20px 0;
-}
-.post-body figure {
-  max-width: 100%;
-  margin: auto;
-  padding: 20px 0;
-  border-radius: 10px;
-  text-align: center;
+.post {
+	letter-spacing: .05em;
+	line-height: 2rem;
+	font-size: 1.25rem
 }
 
-.post-body img {
-  margin: auto;
+.post a:hover {
+	border-bottom-width: 2px;
+	--border-opacity: 1;
+	border-color: #03a9f4;
+	border-color: rgba(3, 169, 244, var(--border-opacity))
 }
 
-.post-body pre {
-  background-color: #292E34; /* warna background */
-  border-left: 5px solid #008c5f; /* variasi border kiri */
-  padding:0; margin:.5em auto; white-space:pre; word-wrap:break-word; overflow:auto; position:relative; width:100%; -moz-tab-size:2; -o-tab-size:2; tab-size:2; word-break:normal; user-select:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text; -webkit-hyphens:none; -moz-hyphens:none; -ms-hyphens:none; hyphens:none
+.post p {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem
 }
-.post-body pre code {
-  color: #BFBF90; /* warna huruf */
-  font-size: 12px; /* ukuran huruf */ 
-  max-height:250px; line-height:1.5em; display:block; background:none; border:none; padding:10px 15px; font-family:'source code pro',menlo,consolas,monaco,monospace; white-space:pre-wrap; overflow:auto; user-select:text; -webkit-user-select:text; -khtml-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text
+
+.post h1 {
+	font-size: 3rem;
+	margin-top: 3rem;
+	line-height: 2.5rem
 }
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+
+.post h1,
+.post h2 {
+	font-weight: 700;
+	margin-bottom: 1.25rem
 }
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+
+.post h2 {
+	font-size: 2.25rem;
+	margin-top: 2.5rem
 }
-blockquote p {
-  display: inline;
+
+.post h3 {
+	font-size: 1.875rem
+}
+
+.post h3,
+.post h4 {
+	font-weight: 700;
+	margin-top: 2.5rem;
+	margin-bottom: 1.25rem
+}
+
+.post h4 {
+	font-size: 1.5rem
+}
+
+.post h5 {
+	font-size: 1.25rem
+}
+
+.post h5,
+.post h6 {
+	font-weight: 700;
+	margin-top: 2.5rem;
+	margin-bottom: 1.25rem
+}
+
+.post h6 {
+	font-size: 1.125rem
+}
+
+.post ol,
+.post p,
+.post ul {
+	overflow: auto
+}
+
+.post>ol,
+.post>ul {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem
+}
+
+.post ol,
+.post ul {
+	padding-left: 2rem
+}
+
+.post ul {
+	list-style-type: disc
+}
+
+.post ol,
+.post ul {
+	list-style-position: outside
+}
+
+.post ol {
+	list-style-type: decimal
+}
+
+.post blockquote p {
+	padding-left: 1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	border-left-width: 4px;
+	--border-opacity: 1;
+	border-color: #03a9f4;
+	border-color: rgba(3, 169, 244, var(--border-opacity));
+	--bg-opacity: 1;
+	background-color: #f7fafc;
+	background-color: rgba(247, 250, 252, var(--bg-opacity))
+}
+
+.post img {
+  border-radius: .375rem;
+  margin:auto;
+}
+
+.post hr,
+.post pre[class*=language-],
+.post table {
+	margin-top: 2rem;
+	margin-bottom: 2rem
+}
+
+.post table {
+	white-space: nowrap;
+	border-collapse: collapse;
+	display: block;
+	overflow: auto
+}
+
+.post table td,
+.post table th {
+	border-width: 1px;
+	padding: 1rem 2rem
+}
+
+.post table th {
+	--bg-opacity: 1;
+	background-color: #f7fafc;
+	background-color: rgba(247, 250, 252, var(--bg-opacity));
+	text-align: left
+}
+.top-20 {
+  top: 5rem;
 }

@@ -1,26 +1,63 @@
 import Link from 'next/link'
-import { Nav, Navbar } from 'react-bootstrap'
 
-export default function NavBar() {
+export default function NavBar({ fixed }) {
+    const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
-        <Navbar collapseOnSelect expand="lg" bg="white" variant="light" className="fixed w-full z-10 top-0 bg-gray-100 sticky border border-b-2 p-0 pb-1">
-            <div className="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-2 md:py-3 ">
-                <Navbar.Brand className="font-weight-bold"><Link href="/">🐣 Blog Awanpc</Link></Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <div className="pt-2 relative mx-auto text-gray-600">
-                        <input className="w-full border-2 border-gray-300 bg-white h-10 px-3 pr-16 rounded-lg text-sm focus:outline-none"
-                            type="search" name="search" placeholder="Search" />
-                        <button type="submit" className="absolute right-0 top-0 mt-3 mr-2">
-                            <i className="fa fa-search" aria-hidden="true"></i>
+        <>
+            <nav className="w-full py-4 border-t border-b bg-gray-100">
+                <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+                    <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                        <button
+                            className="text-blue-600 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                            type="button"
+                            onClick={() => setNavbarOpen(!navbarOpen)}
+                        >
+                            <i class="fa fa-bars"></i>
                         </button>
                     </div>
-                    <Nav className="ml-auto">
-                        <Link href="/post/hello"><a className="nav-link">Tentang</a></Link>
-                        <Link href="/post/hello"><a className="nav-link">Website</a></Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </div>
-        </Navbar>
-    )
+                    <div
+                        className={
+                            "lg:flex flex-grow items-center" +
+                            (navbarOpen ? " flex" : " hidden")
+                        }
+                        id="example-navbar-danger"
+                    >
+                        <ul className="flex flex-col lg:flex-row list-none m-auto">
+                            <li className="nav-item">
+                                <Link href="/"><a
+                                    className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
+                                >
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Home</span>
+                                </a></Link>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
+                                    href="#pablo"
+                                >
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">About</span>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
+                                    href="#pablo"
+                                >
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Privacy</span>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
+                                    href="#pablo"
+                                >
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </>
+    );
 }
