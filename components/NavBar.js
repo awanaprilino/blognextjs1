@@ -33,25 +33,25 @@ export default function NavBar({ fixed }) {
                             <li className="nav-item">
                                 <a
                                     className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
-                                    href="#pablo"
+                                    href="#link"
                                 >
-                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">About</span>
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Tech</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a
                                     className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
-                                    href="#pablo"
+                                    href="#link"
                                 >
-                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Privacy</span>
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Anime &amp; Manga</span>
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a
                                     className="py-2 flex items-center text-base  font-bold leading-snug text-blue-600 hover:opacity-75"
-                                    href="#pablo"
+                                    href="#link"
                                 >
-                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Contact</span>
+                                    <span className="hover:bg-gray-400 rounded py-2 px-4 mx-2">Tutorial</span>
                                 </a>
                             </li>
                         </ul>

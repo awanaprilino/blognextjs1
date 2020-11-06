@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Topnav() {
     return (
         <nav className="w-full py-4 bg-blue-800 shadow">
@@ -5,8 +7,9 @@ export default function Topnav() {
 
                 <nav>
                     <ul className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                        <li><a className="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
-                        <li><a className="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+                        <li><Link href="/"><a className="hover:text-gray-200 hover:underline px-4">Home</a></Link></li>
+                        <li><Link href="/p/about"><a className="hover:text-gray-200 hover:underline px-4">About</a></Link></li>
+                        <li><Link href="/p/contact"><a className="hover:text-gray-200 hover:underline px-4">Contact</a></Link></li>
                     </ul>
                 </nav>
 

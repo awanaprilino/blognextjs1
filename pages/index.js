@@ -5,6 +5,7 @@ import { getAllPostsForHome } from '../lib/api'
 import SidebarRight from '../components/SidebarRight'
 import Topnav from '../components/TopNav'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Index({ allPosts: { edges }, preview }) {
 
@@ -23,6 +24,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         {morePosts.length > 0 && <HomePost posts={morePosts} />}
         <SidebarRight></SidebarRight>
       </div>
+      <Footer />
     </>
   )
 }
