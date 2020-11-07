@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Date from './Date'
-import Categories from './Categories'
-
+import HomeCat from './HomeCat'
 
 export default function HomePost({ posts }) {
     return (
@@ -16,7 +15,7 @@ export default function HomePost({ posts }) {
                                     <img src={node.featuredImage.node.sourceUrl} />
                                 </a>
                                 <div className="bg-white flex flex-col justify-start p-6">
-                                    <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4"></a>
+                                    <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4"><HomeCat categories={node.categories} /></a>
                                     <h2><Link as={`/posts/${node.slug}`} href="/posts/[slug]"><a className="text-xl font-bold text-gray-700 hover:text-gray-800 pb-4">{node.title}</a></Link></h2>
                                     <p href="#" className="text-sm pb-3">
                                         By <a href="#" className="font-semibold hover:text-gray-800">{node.author.node.name}</a>, Published on <Date className="date" dateString={node.date} />
